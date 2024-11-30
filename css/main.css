@@ -1,0 +1,480 @@
+.heading{
+    display: flex; /* provide way to align and distribute space among items */
+    justify-content: space-between; /* align item in main axis */
+    background-color: rgb(0, 171, 227); 
+    padding: 1px;
+}
+
+.heading img{
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+
+
+.profile{
+    display: flex;    
+    align-items: center;
+}
+
+.image_for_profile{
+    width: 20px; 
+    height: 20px; 
+    border-radius: 100%;  /* style the corner */
+    
+}
+
+.tools {
+    text-align: center; /* put text in right */
+    background-color: rgb(0, 171, 227);
+    padding: 2px; /* expand size top and bottom */
+    color: rgb(0, 0, 0);
+    margin: auto;
+}
+
+
+
+.square {
+    width: 100%;
+    height:350px;
+    background-color: rgb(255, 255, 255); /* Blue background */
+    margin: 30px auto; /* Center horizontally */
+    padding: 4px;
+    display: flex; 
+    flex-direction: column; /* arranges the flex items vertically */
+    justify-content: center; /* content in center */
+    align-items: center;  /* Items in center */
+}
+
+
+hr{
+    margin: auto;
+}
+
+.images {
+    height: 250px; /* Adjusted for better layout */
+    width: 250px;
+    border-radius: 20% ;
+    object-fit: contain ; /* Ensures images maintain aspect ratio */
+    margin: 20px auto; /* Center images horizontally */
+
+}
+
+.square_images {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-around; /* Space items evenly */
+    gap: 50px; /* Space between items */
+    padding: 50px; /* Add padding around the container */
+}
+
+.image_items {
+    text-align: center;
+    flex: 1 1 calc(25% - 40px); /* Responsive sizing: 4 items per row */
+    max-width: 250px;
+    box-sizing: border-box; /* Include padding/border in size */
+}
+
+.image_details {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.image-button {
+    background-color: rgb(0, 255, 0); /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px;
+    margin: 10px auto; /* Center button horizontally */
+    border-radius: 5px;
+    font-size: 16px;
+    border: none; /* Remove default border */
+    cursor: pointer; /* Pointer cursor for better UX */
+    display: block; /* Ensure it spans the width of its container */
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+img.hover-effect {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+img.hover-effect:hover {
+    transform: scale(1.02) rotate(3deg); /* Enlarge and rotate */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add shadow */
+    border: 3px solid #3498db; /* Add a blue border */
+}
+
+
+
+
+/*----------------------------------------login----------*/
+
+h2{
+    text-align: center;
+}
+
+.square_login{
+    width: 400px;
+    height: 550px;
+    background-color: #3498db62; /* Blue background */
+    margin: 30px auto; /* Center horizontally */
+    border-radius: 20px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    
+}
+
+.field-input {
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px; 
+    justify-content: flex;
+    margin-bottom: 10px;
+    position: relative;
+    top: -70px; /* Move the content 20px upwards */
+}
+
+
+.label_f{
+    display: block; 
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 70px; 
+}
+
+
+button{
+    padding: 8px;
+    margin-bottom: 12px;
+}
+
+
+.forget_login{
+    align-content: left;
+    margin-top: -75px;
+}
+
+h1{
+    margin-left: 20px; 
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.heading_login{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: rgb(0, 171, 227); 
+    padding: 1px;
+}
+
+.tools_login{
+    text-align: center;
+    background-color: rgb(0, 171, 227); 
+    padding: 2px;
+    color: rgb(0, 0, 0);
+    margin: auto;
+}
+
+
+
+
+/*-----------------------------------register-----------------------*/
+
+.square_r{
+    width: 400px;
+    height: 700px;
+    background-color: #3498db62; /* Blue background */
+    margin: 30px auto; /* Center horizontally */
+    border-radius: 20px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    
+    
+}
+
+.field-input_r{
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px; 
+    justify-content: flex;
+    margin-bottom: 10px;
+    position: relative;
+    top: -70px; /* Move the content 20px upwards */
+}
+
+
+.forget_r{
+    align-content: left;
+    margin-top: -75px;
+}
+
+
+span{
+    color: red;
+}
+
+
+.heading_r{
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: rgb(0, 171, 227); 
+    padding: 1px;
+}
+
+.tools_r{
+    text-align: center;
+    background-color: rgb(0, 171, 227); 
+    padding: 2px;
+    color: rgb(0, 0, 0);
+    margin: auto;
+}
+
+
+
+
+
+/* -------------------------------trading -----*/
+.style_hr {
+    margin: 20px 0; /* Adds space above and below */
+    border: 1px solid #ccc;
+}
+
+.instructions{
+    width: 100%;
+    height: 350px;
+    margin-left: 50px; 
+}
+
+.field-input_t {
+    width: 30%;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 100px;
+    font-size: 16px; 
+    justify-content: flex;
+    margin-top: 50px;
+}
+
+
+.label_style_t{
+    margin: auto;
+    font-size: 25px;
+    position: relative;
+    top: 1px;
+}
+
+
+.profile{
+    display: flex; 
+    align-items: center;
+    justify-content: flex-end; /* Align content to the right */
+    margin-left: auto; /* Push the profile to the far right */
+}
+
+.image_for_profile{
+    width: 45px; 
+    height: 45px; 
+    border-radius: 100%;
+    text-align: left;
+}
+
+
+/* ---------------------------mybook------------------------ */
+
+.square_mb {
+    width: 400px;
+    height: 550px;
+    background-color: #3498db62;/* Blue background */
+    margin: 30px auto; /* Center horizontally */
+    border-radius: 20px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;  /* Center content horizontally */
+}
+
+
+.field-input_mb {
+   
+    width: 80%; /* Adjusted to fill more width */
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+
+}
+
+
+/* ---------------------------- table ------------------------*/
+
+
+table {
+    width: 80%; /* Set table width */
+    margin: 20px auto; /* Center table on page */
+    border-collapse: collapse; /* Merge borders */
+    font-family: Arial, sans-serif;
+  }
+  
+  caption {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  th, td {
+    border: 1px solid #ccc; /* Light gray borders */
+    padding: 10px;
+    text-align: center; /* Center-align text */
+    vertical-align: middle; /* Align vertically for rowspan cells */
+  }
+  
+  thead th {
+    background-color: #f4f4f4; /* Light background for headers */
+  }
+  
+
+
+  /* ------------------------------------- Picture Gallery -----------------------------*/
+
+
+.large_image_sqaure img {
+    width: 25%; /* Adjust the size of the large image */
+    height: 20%; /* Limit the height */
+    border: 2px solid #ccc; /* Add a border */
+    border-radius: 10px; /* Add rounded corners */
+    margin: 20px auto;
+    display: block;
+}
+
+
+
+  /* ------------------------------------- Video ---------------------------*/
+
+
+.Vcentered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    width: 100%;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    background-color: #f0f0f0; /* Optional: Background color */
+}
+
+.Vobject{
+    width: 640px; 
+    height: 360px;
+    border-radius: 8px;
+}
+
+/* ------------------------------------------ resume -------------------------- */
+
+.Rcentered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%; /* Full viewport height */
+    background-color: #f0f0f0; /* Optional: Background color */
+}
+
+.Robject {
+    width: 1000px; 
+    height: 1000px;
+    border-radius: 10px;
+    border: 2px solid #3498db; /* Optional: Add a border */
+    
+}
+
+
+
+/* ------------------------------------------ Form -------------------------- */
+
+.square_f{
+    width: 500px;
+    background-color: #3498db62;
+    margin-left: 100px;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    font-size: 16px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+.field-input_f{
+    width: 95%;
+    padding: 7px;
+    border: 2px solid #333;
+    border-radius: 5px;
+    font-size: 16px; 
+    margin-bottom: 3px;
+
+}
+
+legend{
+    font-size: 25px;
+}
+
+textarea{
+    width: 318px; 
+    height: 142px;
+}
+
+.s1{
+    margin-right: 10px;
+}
+
+fieldset{
+    border: 2px solid black;
+}
+
+.b1{
+    width: 100%;
+}
+
+.sp1{
+    margin-bottom: 100px;
+}
+
+/* ------------------------------------------- contact------------------------------------*/
+
+address{
+    text-align:center;
+    margin-bottom: 20px;
+}
+
+blockquote{
+    text-align: center; 
+}
+
+
+.text_center{
+    text-align: center;
+}
+
+.m{
+    margin-bottom: 20px;
+}

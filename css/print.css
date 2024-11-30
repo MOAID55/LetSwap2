@@ -1,0 +1,30 @@
+
+header, footer, #header, #footer, .header, .footer ,#line {
+    display: none;
+}
+
+
+table {
+    width: 80%; /* Set table width */
+    margin: 20px auto; /* Center table on page */
+    border-collapse: collapse; /* Merge borders */
+    font-family: Arial, sans-serif;
+  }
+  
+  caption {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  th, td {
+    border: 1px solid #ccc; /* Light gray borders */
+    padding: 10px;
+    text-align: center; /* Center-align text */
+    vertical-align: middle; /* Align vertically for rowspan cells */
+  }
+  
+  thead th {
+    background-color: #f4f4f4; /* Light background for headers */
+  }
