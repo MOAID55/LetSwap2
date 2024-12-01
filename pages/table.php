@@ -1,9 +1,11 @@
-<?php include '../includes/header.php'; ?>
+<?php include '../includes/header.php'; 
+$pageTitle = "Swap Shelf - Page";
+?>
 
 
 
 <table>
-  <caption>Swap Booking Table</caption>
+  <caption> BookSwap Station </caption>
   <thead>
   
     <tr>
