@@ -3,26 +3,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $Username = $_POST['Username'];  
     $Password = $_POST['Password'];
-    
-   
 
-    $host = "localhost";
-    $dbusername = "root";
-    $dbpassword = "";
-    $dbname = "cpcs403";
+
+
+    // Database URL 
+    $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@autorack.proxy.rlwy.net:15002/railway";
+
+    // Parse the URL
+    $db_url = parse_url($database_url);
+
+    $host = $db_url["host"];
+    $dbname = ltrim($db_url["path"], '/');
+    $dbusername = $db_url["user"];
+    $dbpassword = $db_url["pass"];
+    $port = $db_url["port"];
 
     //to Create connection
-    $conn = mysqli_connect($host, $dbusername, $dbpassword);
+    $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
 
     //to Check connection
     if($conn){
-        
-        if(!mysqli_select_db($conn,$dbname)){
-            header("Location: error.php");
-        }
-
-
+        die("Connection failed: " . mysqli_connect_error());
     }
+    
 
 
     $stmt = mysqli_prepare($conn,"select * from users where username= ? and password = ?");
