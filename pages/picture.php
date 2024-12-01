@@ -18,22 +18,22 @@ include '../includes/header.php';
 
 <div class="square_images">
     <div class="image_items">
-        <img src= "../images/book1.png" id="Book1"  class="images"   alt="Books Images"/>
+        <img src= "../images/book1.png" id="book1"  class="images"   alt="Books Images"/>
         <p class="image_details">Book: The Alchemist <br /><br /> Moaid55 <br /><br />Location: Jeddah</p>
         
     </div>
     <div class="image_items">
-        <img src= "../images/book2.png" id="Book2" class="images"  alt="Books Images"/>
+        <img src= "../images/book2.png" id="book2" class="images"  alt="Books Images"/>
         <p class="image_details">Book: The Old Man and the Sea  <br /><br /> Ahmed55 <br /><br />Location: Jeddah</p>
         
     </div>
     <div class="image_items">
-        <img src= "../images/book3.png" id="Book3" class="images"  alt="Books Images"/>
+        <img src= "../images/book3.png" id="book3" class="images"  alt="Books Images"/>
         <p class="image_details"> Book: The Magic Mountain <br /><br /> Mohammed55 <br /><br />Location: Jeddah</p>
         
     </div>
     <div class="image_items">
-        <img src= "../images/book4.png" id="Book4" class="images"  alt="Books Images"/>
+        <img src= "../images/book4.png" id="book4" class="images"  alt="Books Images"/>
         <p class="image_details">Book: The Stranger <br /><br /> Ali123 <br /><br />Location: Jeddah</p>
         
     </div>
