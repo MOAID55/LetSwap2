@@ -18,7 +18,7 @@ session_start();
 <body>
     
         <div class="heading" id = "header">
-            <h2><a href="../pages/home.php">LitSwap</a></h2>
+            <h2><a href="./index.php">LitSwap</a></h2>
 
             
 
@@ -34,20 +34,20 @@ session_start();
                 <a href="../pages/login.php">Log in</a> | 
                 <?php endif; ?>
 
-                <a href="../pages/contact.php">Contact us</a> |
-                <a href="../pages/table.php"> Table </a> |
-                <a href="../pages/picture.php"> Picture Gallery </a> |
-                <a href="../pages/video.php"> Video </a> |
-                <a href="../pages/resume.php"> Resume </a> |
-                <a href="../pages/form.php"> Feedback Form</a>
+                <a href="./pages/contact.php">Contact us</a> |
+                <a href="./pages/table.php"> Table </a> |
+                <a href="./pages/picture.php"> Picture Gallery </a> |
+                <a href="./pages/video.php"> Video </a> |
+                <a href="./pages/resume.php"> Resume </a> |
+                <a href="./pages/form.php"> Feedback Form</a>
 
             </p>
             </div>
 
         <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
            
-            <a href="../pages/logout.php" class="image_for_profile" style ="margin-top:25px;"> logout </a> 
-            <img src="../images/Profile.png" alt="Profile Image" class="image_for_profile" />
+            <a href="./pages/logout.php" class="image_for_profile" style ="margin-top:25px;"> logout </a> 
+            <img src="./images/Profile.png" alt="Profile Image" class="image_for_profile" />
             
         <?php endif; ?>
 
