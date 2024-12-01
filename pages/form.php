@@ -1,4 +1,6 @@
-<?php include('../includes/header.php'); ?>
+<?php include '../includes/header.php'; 
+$pageTitle = " Feedback Form - Page";
+?>
 
 <h1 style="margin-left: 240px;"> Feedback Form </h1>
 
