@@ -19,21 +19,22 @@ $file_name = $_FILES['file']['name'];
 $tempname = $_FILES['file']['tmp_name'];
 $folder = '../k/'.$file_name;
 
-// Database connection
-$host = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "cpcs403";
+// Database URL 
+  $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@autorack.proxy.rlwy.net:15002/railway";
 
-$conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);
+// Parse the URL
+  $db_url = parse_url($database_url);
 
-if($conn){
-        
-    if(!mysqli_select_db($conn,$dbname)){
-        header("Location: error.php");
-    }
-
-
+  $host = $db_url["host"];
+  $dbname = ltrim($db_url["path"], '/');
+  $dbusername = $db_url["user"];
+  $dbpassword = $db_url["pass"];
+  $port = $db_url["port"];
+ //to Create connection
+  $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
+ //to Check connection
+  if($conn){
+    die("Connection failed: " . mysqli_connect_error());
 }
 
 
