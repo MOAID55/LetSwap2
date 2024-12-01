@@ -10,7 +10,7 @@ include '../includes/header.php';
 
 <!-- Large Image Display -->
 <div class="large_image_sqaure" style="text-align:center;">
-    <img id="largeImage" src="./images/book1.png" alt="Large Image" class = "large-image-container"/>
+    <img id="largeImage" src="../images/book1.png" alt="Large Image" class = "large-image-container"/>
 </div>
 
 
