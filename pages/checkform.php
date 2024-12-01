@@ -31,14 +31,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $port = $db_url["port"];
 
     //to Create connection
-    $conn = mysqli_connect($host, $dbusername, $dbpassword,$port);
+    $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
 
     //to Check connection
     if($conn){
         
-        if(!mysqli_select_db($conn,$dbname)){
-            header("Location: error.php");
-        }
+        
 
 
     }
