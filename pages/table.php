@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Table - Page";
-include('./includes/header.php');
+include('./header.php');
 ?>
 
 
@@ -77,4 +77,4 @@ include('./includes/header.php');
 
 
 
-<?php include('./includes/footer.php'); ?>
+<?php include('./footer.php'); ?>
