@@ -2,9 +2,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 
 
-<?php 
-session_start();
-?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -18,7 +15,7 @@ session_start();
 <body>
     
         <div class="heading" id = "header">
-            <h2><a href="./index.php">LitSwap</a></h2>
+            <h2><a href="../index.php">LitSwap</a></h2>
 
             
 
