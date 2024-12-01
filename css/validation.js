@@ -98,7 +98,7 @@ function login() {
     }
 
     // Validate Password
-    const passwordField = document.getElementById("Password");
+    const passwordField = document.getElementById("Password1");
     const password = passwordField.value.trim();
     
 
