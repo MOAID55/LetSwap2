@@ -1,6 +1,6 @@
 <?php
 $pageTitle = "Trading - Page";
-include('../includes/header.php');
+include '../includes/header.php';
 ?>
 
 <div class="instructions">
@@ -27,21 +27,25 @@ include('../includes/header.php');
 <h1 style="color: red;"> Tradings </h1>
 
 <?php
-// Database connection
-$host = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "cpcs403";
+// Database URL 
+ $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@autorack.proxy.rlwy.net:15002/railway";
 
-$conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);
+// Parse the URL
+ $db_url = parse_url($database_url);
 
-if ($conn) {
-    if (!mysqli_select_db($conn, $dbname)) {
-        header("Location: error.php");
-        exit;
-    }
+$host = $db_url["host"];
+$dbname = ltrim($db_url["path"], '/');
+$dbusername = $db_url["user"];
+$dbpassword = $db_url["pass"];
+$port = $db_url["port"];
+
+    //to Create connection
+$conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
+
+    //to Check connection
+if($conn){
+       die("Connection failed: " . mysqli_connect_error());
 }
-
 // Get the search term if provided
 $search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : ''; // real escape string to handle sql injection
 
@@ -100,4 +104,4 @@ if (mysqli_num_rows($result) > 0) {
 mysqli_close($conn);
 ?>
 
-<?php include('../includes/footer.php'); ?>
+<?php include '../includes/footer.php'; ?>
