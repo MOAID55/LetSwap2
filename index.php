@@ -33,7 +33,7 @@
 
 <div class="square_images">
     <div class="image_items">
-        <img src="../images/Book1.png" class="images" alt="Books Images" />
+        <img src="../images/Book1.png"  alt="Books Images" />
         <p class="image_details">Book: The Alchemist <br /><br /> Moaid55 <br /><br />Location: Jeddah</p>
         <a href="mailto:m45job@outlook.com?subject=Inquiry" style="color:red; font-size: 20px;">Email me</a>
     </div>
