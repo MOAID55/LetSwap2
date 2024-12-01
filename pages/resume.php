@@ -1,4 +1,6 @@
-<?php include('../includes/header.php'); ?>
+<?php include '../includes/header.php' ; 
+$pageTitle = "Resume - Page";
+?>
 
 
 
@@ -11,4 +13,4 @@
 
 
 
-<?php include('../includes/footer.php'); ?>
+<?php include '../includes/footer.php'; ?>
