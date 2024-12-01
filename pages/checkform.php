@@ -16,15 +16,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     
-   
+                       
 
-    $host = "localhost";
-    $dbusername = "root";
-    $dbpassword = "";
-    $dbname = "cpcs403";
+   // Database URL 
+    $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@autorack.proxy.rlwy.net:15002/railway";
+
+// Parse the URL
+    $db_url = parse_url($database_url);
+
+    $host = $db_url["host"];
+    $dbname = ltrim($db_url["path"], '/');
+    $dbusername = $db_url["user"];
+    $dbpassword = $db_url["pass"];
+    $port = $db_url["port"];
 
     //to Create connection
-    $conn = mysqli_connect($host, $dbusername, $dbpassword);
+    $conn = mysqli_connect($host, $dbusername, $dbpassword,$port);
 
     //to Check connection
     if($conn){
