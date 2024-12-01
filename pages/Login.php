@@ -1,4 +1,4 @@
-<?php include('../includes/header.php'); ?>
+<?php include('./includes/header.php'); ?>
 
 <div class="content">
     <h2>With one account, you can swap your book <br /> with someone else</h2>
@@ -42,4 +42,4 @@
 
 
 
-<?php include('../includes/footer.php'); ?>
+<?php include('./includes/footer.php'); ?>
