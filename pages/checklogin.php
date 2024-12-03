@@ -18,16 +18,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-    //to Create connection
-    $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
 
     //to Check connection
     if($conn){
-        echo "Host: $host\n";
-    echo "Database Name: $dbname\n";
-    echo "Username: $dbusername\n";
-    echo "Password: $dbpassword\n";
-    echo "Port: $port\n";
         die("Connection failed: " . mysqli_connect_error());
     }
     
