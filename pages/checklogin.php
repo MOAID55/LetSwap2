@@ -10,19 +10,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@mysql.railway.internal:3306/railway";
 
 // Parse the URL
-    $db_url = parse_url($database_url);
+    $host = $db_url["host"];
+    $dbname = ltrim($db_url["path"], '/');
+    $dbusername = $db_url["user"];
+    $dbpassword = $db_url["pass"];
+    $port = $db_url["port"];
 
-    $host = "mysql.railway.internal";
-    $dbname = "railway";
-    $dbusername = "root";
-    $dbpassword = "HVbccVGqHQpCRgUcbsDTvebEobEMKxNV";
-    $port = "3306";
+/
 
     //to Create connection
     $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
 
     //to Check connection
     if($conn){
+        echo "Host: $host\n";
+    echo "Database Name: $dbname\n";
+    echo "Username: $dbusername\n";
+    echo "Password: $dbpassword\n";
+    echo "Port: $port\n";
         die("Connection failed: " . mysqli_connect_error());
     }
     
