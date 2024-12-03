@@ -6,14 +6,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-    $host = 'mysql.railway.internal';
-    $port = 3306;
-    $username = 'root';
-    $password = 'HVbccVGqHQpCRgUcbsDTvebEobEMKxNV';
-    $database = 'railway';
+  $host = 'autorack.proxy.rlwy.net';
+$port = 15002;
+$username = 'root';
+$password = 'HVbccVGqHQpCRgUcbsDTvebEobEMKxNV';
+$database = 'railway';
 
 // Create a connection
-    $conn = mysqli_connect($host, $username, $password, $database, $port); 
+$conn = mysqli_connect($host, $username, $password, $database, $port);
    
 
 
