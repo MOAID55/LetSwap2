@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $dbpassword = $db_url["pass"];
     $port = $db_url["port"];
 
-/
+
 
     //to Create connection
     $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
