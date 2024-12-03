@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
     // Database URL 
-    $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@autorack.proxy.rlwy.net:15002/railway";
+    $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@mysql.railway.internal:3306/railway";
 
     // Parse the URL
     $db_url = parse_url($database_url);
