@@ -8,7 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
  
     // Database URL 
-    $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@mysql.railway.internal:3306/railway";
+    $database_url = getenv('URL');
     
     // Parse the URL
     $db_url = parse_url($database_url);
