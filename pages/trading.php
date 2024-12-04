@@ -49,7 +49,7 @@ if (!$conn) {
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 
 // Fetch books from the table with optional search filter
-$sql = "SELECT b.bookname, b.file_content, b.file, u.location, u.name, u.email, u.id AS user_id
+$sql = "SELECT b.id_book, b.bookname, b.file_content, b.file, u.location, u.name, u.email, u.id AS user_id
         FROM users u
         INNER JOIN books b ON u.id = b.user_id";
 
@@ -79,6 +79,7 @@ if (mysqli_num_rows($result) > 0) {
         $Location = htmlspecialchars($row['location']);
         $name = htmlspecialchars($row['name']);
         $email = htmlspecialchars($row['email']);
+        $book_id = $row['id_book'];
 
         // Generate the HTML for each book
         echo '
