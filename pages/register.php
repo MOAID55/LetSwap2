@@ -6,7 +6,7 @@ include('../includes/header.php');
 <div class="content">
     <h2>With one account, you can swap your book <br /> with someone else</h2>
     <form class="square_r" action="checkregister.php" method="post" onsubmit="return register()">
-        <h2>Sign up</h2>
+        <h2 style = "text-align: center;" >Sign up</h2>
 
         <!-- Name Input -->
         <div>
