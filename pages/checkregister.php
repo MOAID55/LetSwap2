@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $Location =  $_POST['location'];
     $Password = $_POST['password'];
     
-    
+    $EnryptedPass = password_hash($Password, PASSWORD_BCRYPT);
 
    // Database URL 
     $database_url = getenv('URL');
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $stmt = mysqli_prepare($conn,"INSERT INTO users (name, username, email, location, password) VALUES (?, ?, ?, ?, ?)");
     // $hashedPass = password_hash($Password, PASSWORD_BCRYPT);
-    mysqli_stmt_bind_param($stmt,'sssss',$Name,$Username,$Email,$Location,$Password);
+    mysqli_stmt_bind_param($stmt,'sssss',$Name,$Username,$Email,$Location,$EnryptedPass);
     
       
 
