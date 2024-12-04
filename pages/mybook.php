@@ -27,24 +27,20 @@ include('../includes/header.php');
 
 <?php
 // Database connection
-$host = "localhost";
-$dbusername = "root";
-$dbpassword = "";
-$dbname = "cpcs403";
+ $database_url = getenv('URL');
 
-$user_id = $_SESSION['user_id'];
+    // Parse the URL
+ $db_url = parse_url($database_url);
 
-$conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname);
+ $host = $db_url["host"];
+ $dbname = ltrim($db_url["path"], '/');
+ $dbusername = $db_url["user"];
+ $dbpassword = $db_url["pass"];
+ $port = $db_url["port"];
 
+    //to Create connection
+ $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
 
-if($conn){
-        
-    if(!mysqli_select_db($conn,$dbname)){
-        header("Location: error.php");
-    }
-
-
-}
 
 
 // Fetch books from the table
