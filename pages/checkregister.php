@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
 
    // Database URL 
-    $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@autorack.proxy.rlwy.net:15002/railway";
+    $database_url = getenv('URL');
 
     // Parse the URL
     $db_url = parse_url($database_url);
@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
 
     //to Check connection
-    if($conn){
+    if(!$conn){
         die("Connection failed: " . mysqli_connect_error());
     }
 
