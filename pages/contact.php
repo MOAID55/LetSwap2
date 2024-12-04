@@ -1,7 +1,5 @@
 
-<?php include '../includes/header.php';
-$pageTitle = " Contact - Page"; 
-?>
+<?php include '../includes/header.php'; ?>
 
         
 <fieldset>
