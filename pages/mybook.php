@@ -80,7 +80,7 @@ if (mysqli_num_rows($result) > 0) {
     }
     echo '</div>';
 } else {
-    echo '<p>No books found.</p>';
+    echo '<p style= "text-align: center;" >No books found. It seems there are no books available right now. Please add some books!</p>';
 }
 
 mysqli_close($conn);
