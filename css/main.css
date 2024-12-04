@@ -140,7 +140,7 @@ h2{
     border: 2px solid #333;
     border-radius: 5px;
     font-size: 16px; 
-    justify-content: flex-start;
+    justify-content: center;
     margin-bottom: 10px;
     position: relative;
     top: -70px; /* Move the content 20px upwards */
@@ -213,7 +213,7 @@ h1{
     border: 2px solid #333;
     border-radius: 5px;
     font-size: 16px; 
-    justify-content: flex-start;
+    justify-content: center;
     margin-bottom: 10px;
     position: relative;
     top: -70px; /* Move the content 20px upwards */
