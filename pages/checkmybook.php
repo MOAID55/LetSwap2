@@ -47,7 +47,7 @@ $user_id = $_SESSION['user_id'];
 $stmt = mysqli_prepare($conn, "INSERT INTO books (bookname, file, user_id,file_content) VALUES (?, ?, ?,?)");
 mysqli_stmt_bind_param($stmt, 'ssis', $add, $file_name, $user_id,$file_content);
 
-if (mysqli_stmt_execute($stmt) && move_uploaded_file($tempname, $folder)) {
+if (mysqli_stmt_execute($stmt)) {
     echo "<script>alert('Added successfully!'); window.location.href = 'trading.php';</script>";
 } else {
     echo "<script>alert('Failed to add the book. try again'); window.location.href = '../index.php'; </script>";
