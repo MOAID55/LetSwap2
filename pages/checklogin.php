@@ -6,21 +6,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 
-  $host = 'autorack.proxy.rlwy.net';
-$port = 15002;
-$username = 'root';
-$password = 'HVbccVGqHQpCRgUcbsDTvebEobEMKxNV';
-$database = 'railway';
+ 
+    // Database URL 
+    $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@mysql.railway.internal:3306/railway";
+    
+    // Parse the URL
+    $db_url = parse_url($database_url);
 
-// Create a connection
-$conn = mysqli_connect($host, $username, $password, $database, $port);
-   
+    $host = $db_url["host"];
+    $dbname = ltrim($db_url["path"], '/');
+    $username = $db_url["user"];
+    $password = $db_url["pass"];
+    $port = $db_url["port"];
+
+    // Establish a connection to the MySQL database
+    $conn = mysqli_connect($host, $username, $password, $dbname, $port);
 
 
 
 
     //to Check connection
-    if($conn){
+    if(!$conn){
         die("Connection failed: " . mysqli_connect_error());
     }
     
