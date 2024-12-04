@@ -16,9 +16,12 @@ $add = $_POST['add'];
 
 
 
+$add = htmlspecialchars($_POST['add']); // Sanitize book name
 $file_name = $_FILES['file']['name'];
 $tempname = $_FILES['file']['tmp_name'];
-$folder = '../k/'.$file_name;
+
+$file_content = file_get_contents($tempname);
+
 
 // Database URL 
   $database_url = getenv('URL');
@@ -41,8 +44,8 @@ $folder = '../k/'.$file_name;
 
 // Insert into database
 $user_id = $_SESSION['user_id'];
-$stmt = mysqli_prepare($conn, "INSERT INTO books (bookname, file, user_id) VALUES (?, ?, ?)");
-mysqli_stmt_bind_param($stmt, 'ssi', $add, $file_name, $user_id);
+$stmt = mysqli_prepare($conn, "INSERT INTO books (bookname, file, user_id,file_content) VALUES (?, ?, ?,?)");
+mysqli_stmt_bind_param($stmt, 'ssis', $add, $file_name, $user_id,$file_content);
 
 if (mysqli_stmt_execute($stmt) && move_uploaded_file($tempname, $folder)) {
     echo "<script>alert('Added successfully!'); window.location.href = 'trading.php';</script>";
