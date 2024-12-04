@@ -1,3 +1,4 @@
+<?php include './includes/session_start.php'; ?>
 <?php include './includes/header.php'; ?>
 
 
