@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <link rel="stylesheet" href="../css/print.css" media="print"/>
     <script src="../css/hover.js" type="text/javascript"></script>
-    <script src="../css/validation.js" type="text/javascript"></script>  
+    <script src="../css/validation.js" type="text/javascript"></script>
+    session_start();
 </head>
 
 <body>
