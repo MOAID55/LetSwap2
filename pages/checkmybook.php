@@ -20,7 +20,7 @@ $tempname = $_FILES['file']['tmp_name'];
 $folder = '../k/'.$file_name;
 
 // Database URL 
-  $database_url = "mysql://root:HVbccVGqHQpCRgUcbsDTvebEobEMKxNV@autorack.proxy.rlwy.net:15002/railway";
+  $database_url = getenv('URL');
 
 // Parse the URL
   $db_url = parse_url($database_url);
@@ -33,7 +33,7 @@ $folder = '../k/'.$file_name;
  //to Create connection
   $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
  //to Check connection
-  if($conn){
+  if(!$conn){
     die("Connection failed: " . mysqli_connect_error());
 }
 
