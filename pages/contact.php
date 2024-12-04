@@ -1,6 +1,7 @@
 
 <?php include '../includes/header.php';
-$pageTitle = " Feedback Form - Page"; ?>
+$pageTitle = " Contact - Page"; 
+?>
 
         
 <fieldset>
@@ -48,4 +49,4 @@ $pageTitle = " Feedback Form - Page"; ?>
     </address>
 </div>
 
-<?php include '../includes/footer.php'; ?>;
+<?php include '../includes/footer.php'; ?>
