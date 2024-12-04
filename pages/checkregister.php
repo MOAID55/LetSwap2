@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Redirect based on the result
     if (mysqli_stmt_execute($stmt)) {
-        echo "<script>alert('Registration successful!'); window.location.href = 'index.php';</script>";
+        echo "<script>alert('Registration successful!'); window.location.href = '../index.php'; </script>";
     } else {
         
         if (mysqli_errno($conn) == 1062) { // Error code for duplicate entry
