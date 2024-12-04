@@ -4,6 +4,7 @@ $pageTitle = " Feedback Form - Page";
 
 <h1 style="margin-left: 240px;"> Feedback Form </h1>
 
+<img src = "../images/feedback.png" style = "float: left;" />
 
 
 <div class="square_f">
