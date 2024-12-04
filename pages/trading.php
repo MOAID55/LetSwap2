@@ -46,28 +46,30 @@ if (!$conn) {
 }
 
 // Get the search term if provided
-$search = isset($_GET['search']) ? $_GET['search'] : '';
+$search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : ''; // real escape string to handle sql injection
 
 // Fetch books from the table with optional search filter
-$sql = "SELECT b.bookname, b.file_content, b.file, u.location, u.name, u.email, u.id AS user_id
+$sql = "SELECT b.bookname, b.file, u.location, u.name, u.email, u.id AS user_id
         FROM users u
         INNER JOIN books b ON u.id = b.user_id";
 
 if (!empty($search)) {
-    $sql .= " WHERE b.bookname LIKE ?";
+    $sql .= " WHERE b.bookname LIKE ?"; // Filter books by title
 }
+
 
 $stmt = mysqli_prepare($conn, $sql);
 
+
 if (!empty($search)) {
-    $searchTerm = '%' . $search . '%';
-    mysqli_stmt_bind_param($stmt, 's', $searchTerm);
+    $searchTerm = '%'.$search.'%'; 
+    mysqli_stmt_bind_param($stmt, 's', $searchTerm); //string
 }
 
 // Execute the prepared statement
 mysqli_stmt_execute($stmt);
 
-// Get the result
+// Get the result 
 $result = mysqli_stmt_get_result($stmt);
 
 // Check if there are any books
@@ -75,11 +77,11 @@ if (mysqli_num_rows($result) > 0) {
     echo '<div class="square_images">';
     while ($row = mysqli_fetch_assoc($result)) {
         $bookname = htmlspecialchars($row['bookname']);
-        $file_content = $row['file_content']; // Binary image data
+        $file = htmlspecialchars($row['file']);
         $Location = htmlspecialchars($row['location']);
+        $image_path = "../k/" . $file;
         $name = htmlspecialchars($row['name']);
         $email = htmlspecialchars($row['email']);
-       $image_path = "../k/" . $file;
 
         // Generate the HTML for each book
         echo '
@@ -98,8 +100,7 @@ if (mysqli_num_rows($result) > 0) {
     echo '<p>No books found.</p>';
 }
 
-// Close the connection
 mysqli_close($conn);
 ?>
 
-<?php include '../includes/footer.php'; ?>
+<?php include('../includes/footer.php'); ?>
