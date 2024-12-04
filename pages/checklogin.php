@@ -1,12 +1,9 @@
 <?php 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $Username = $_POST['Username'];  
     $Password = $_POST['Password'];
 
-
-
- 
     // Database URL 
     $database_url = getenv('URL');
     
@@ -22,38 +19,37 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Establish a connection to the MySQL database
     $conn = mysqli_connect($host, $username, $password, $dbname, $port);
 
-
-
-
-    //to Check connection
-    if(!$conn){
+    // Check connection
+    if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
     
-
-
-    $stmt = mysqli_prepare($conn,"select * from users where username= ? and password = ?");
-    mysqli_stmt_bind_param($stmt,'ss',$Username , $Password);
+    // Prepare the SQL statement to fetch the hashed password
+    $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE username = ?");
+    mysqli_stmt_bind_param($stmt, 's', $Username);
     mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);  //handling sql injection
+    $result = mysqli_stmt_get_result($stmt);
 
-
-
-    // Redirect based on the result
-    if($result -> num_rows == 1){
-
-        session_start();
+    if ($result && $result->num_rows == 1) {
         $user = $result->fetch_assoc();
-        $_SESSION['loggedin'] = true; // Store logged-in status
-        $_SESSION['user_id'] = $user['id']; // Store user ID
+        $hashedPassword = $user['password']; // Assuming the hashed password is stored in the 'password' column
 
-        header("Location: trading.php"); // Corrected: Added semicolon
-        exit();
+        // Verify the password
+        if (password_verify($Password, $hashedPassword)) {
+            session_start();
+            $_SESSION['loggedin'] = true; // Store logged-in status
+            $_SESSION['user_id'] = $user['id']; // Store user ID
+
+            header("Location: trading.php");
+            exit();
+        } else {
+            echo "<script>alert('Invalid username or password. Please try again.'); window.location.href = 'login.php';</script>";
+        }
     } else {
         echo "<script>alert('Invalid username or password. Please try again.'); window.location.href = 'login.php';</script>";
     }
 
-    // Close the connection
+    // Close the statement and connection
     mysqli_stmt_close($stmt);
     mysqli_close($conn);
 }
