@@ -1,6 +1,9 @@
 <?php
 session_start();
 
+$user_id = $_SESSION['user_id'];
+
+
 if (!isset($_SESSION['user_id'])) {
     echo "<script>alert('Please log in first.'); window.location.href = 'login.php';</script>";
     exit();
