@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$user_id = $_SESSION['user_id'];
+
 
 
 if (!isset($_SESSION['user_id'])) {
@@ -31,6 +31,8 @@ $dbname = ltrim($db_url["path"], '/');
 $dbusername = $db_url["user"];
 $dbpassword = $db_url["pass"];
 $port = $db_url["port"];
+$user_id = $_SESSION['user_id'];
+
 
 // Create database connection
 $conn = mysqli_connect($host, $dbusername, $dbpassword, $dbname, $port);
