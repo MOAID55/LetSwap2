@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // Validate 'add' input
 if (empty($_POST['add'])) {
-    echo "<script>alert('Book name is required.'); window.location.href = 'index.php';</script>";
+    echo "<script>alert('Book name is required.'); window.location.href = '../index.php';</script>";
     exit();
 }
 
@@ -17,7 +17,11 @@ $add = $_POST['add'];
 
 $file_name = $_FILES['file']['name'];
 $tempname = $_FILES['file']['tmp_name'];
-$folder = '../k/'.$file_name;
+$folder = '../saveimage/'.$file_name;
+
+if (!file_exists('../saveimage/')) {
+    mkdir('../k/', 0777, true); // Create the directory with write permissions
+}
 
 // Database URL 
   $database_url = getenv('URL');
@@ -35,7 +39,7 @@ $folder = '../k/'.$file_name;
  //to Check connection
   if(!$conn){
     die("Connection failed: " . mysqli_connect_error());
-}
+  }
 
 
 // Insert into database
@@ -46,7 +50,7 @@ mysqli_stmt_bind_param($stmt, 'ssi', $add, $file_name, $user_id);
 if (mysqli_stmt_execute($stmt) && move_uploaded_file($tempname, $folder)) {
     echo "<script>alert('Added successfully!'); window.location.href = 'trading.php';</script>";
 } else {
-    echo "<script>alert('Failed to add the book. try again'); window.location.href = 'index.php';</script>";
+    echo "<script>alert('Failed to add the book. try again'); window.location.href = '../index.php'; </script>";
 }
 
 mysqli_close($conn);
