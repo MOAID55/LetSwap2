@@ -37,7 +37,7 @@ include('../includes/header.php');
  $dbusername = $db_url["user"];
  $dbpassword = $db_url["pass"];
  $port = $db_url["port"];
-
+ $user_id = $_SESSION['user_id'];
     //to Create connection
  $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
 
@@ -49,9 +49,12 @@ if(!$conn){
 // Fetch books from the table
 $sql = "SELECT b.bookname, b.file, u.location, u.name
         FROM books b
-        JOIN users u ON b.user_id = u.id WHERE b.user_id = $user_id ";
+        JOIN users u ON b.user_id = u.id WHERE b.user_id = ? ";
 
-$result = mysqli_query($conn, $sql);
+$stmt = mysqli_prepare($conn, $sql);
+mysqli_stmt_bind_param($stmt, 'i', $user_id); //string
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 // Check if there are any books
 if (mysqli_num_rows($result) > 0) {
