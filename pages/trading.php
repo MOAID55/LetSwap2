@@ -83,7 +83,7 @@ if (mysqli_num_rows($result) > 0) {
         // Generate the HTML for each book
         echo '
         <div class="image_items">
-            <img src="display_image.php?id=' . htmlspecialchars($book_id) . '" class="images" alt="Book Image" />
+            <img src="display.php?id=' . htmlspecialchars($book_id) . '" class="images" alt="Book Image" />
             <p class="image_details">
                 Book: ' . $bookname . ' <br /><br />
                 Name: ' . $name . ' <br /><br />
