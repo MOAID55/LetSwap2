@@ -79,7 +79,7 @@ if (mysqli_num_rows($result) > 0) {
         $bookname = htmlspecialchars($row['bookname']);
         $file = htmlspecialchars($row['file']);
         $Location = htmlspecialchars($row['location']);
-        $image_path = "../k/" . $file;
+        $image_path = "../images/" . $file;
         $name = htmlspecialchars($row['name']);
         $email = htmlspecialchars($row['email']);
 
