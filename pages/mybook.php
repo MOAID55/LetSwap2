@@ -41,7 +41,10 @@ include('../includes/header.php');
     //to Create connection
  $conn = mysqli_connect($host, $dbusername, $dbpassword,$dbname,$port);
 
-
+//to Check connection
+if(!$conn){        
+    die("Connection failed: " . mysqli_connect_error());
+}
 
 // Fetch books from the table
 $sql = "SELECT b.bookname, b.file, u.location, u.name
