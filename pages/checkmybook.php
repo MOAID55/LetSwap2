@@ -41,10 +41,10 @@ if (!$conn) {
 $stmt = mysqli_prepare($conn, "INSERT INTO books (bookname, file, user_id, file_content) VALUES (?, ?, ?, ?)");
 
 // Bind parameters
-mysqli_stmt_bind_param($stmt, 'ssis', $add, $file_name, $user_id, $null);
+mysqli_stmt_bind_param($stmt, 'ssib', $add, $file_name, $user_id, $file_content);
 
-// Send binary data using `mysqli_stmt_send_long_data`
-mysqli_stmt_send_long_data($stmt, 3, $file_content); // The "3" refers to the index of the `file_content` parameter in the SQL query
+`
+
 
 // Execute the statement
 if (mysqli_stmt_execute($stmt)) {
