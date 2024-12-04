@@ -15,12 +15,10 @@ if (empty($_POST['add'])) {
     exit();
 }
 
-$add = htmlspecialchars($_POST['add']); // Sanitize book name
+$add = $_POST['add'];
 $file_name = $_FILES['file']['name'];
 $tempname = $_FILES['file']['tmp_name'];
-
-// Read the binary file content
-$file_content = file_get_contents($tempname);
+$folder = '../k/'.$file_name;
 
 // Database URL
 $database_url = getenv('URL');
@@ -52,7 +50,7 @@ mysqli_stmt_bind_param($stmt, 'ssi', $add, $file_name, $user_id);
 
 
 // Execute the statement
-if (mysqli_stmt_execute($stmt)) {
+if (mysqli_stmt_execute($stmt) && move_uploaded_file($tempname, $folder)) {
     echo "<script>alert('Added successfully!'); window.location.href = 'trading.php';</script>";
 } else {
     echo "<script>alert('Failed to add the book. Try again.'); window.location.href = '../index.php';</script>";
