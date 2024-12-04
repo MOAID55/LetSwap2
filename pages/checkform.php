@@ -55,14 +55,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
          // Redirect based on the result
         if (mysqli_stmt_execute($stmt)) {
-            echo "<script>alert('Form has been submitted successfully'); window.location.href = 'index.php';</script>";
+            echo "<script>alert('Form has been submitted successfully'); window.location.href = '../index.php';</script>";
         }else{
             echo "<script>alert('please try again and fill out all fields!! '); window.location.href = 'form.php';</script>";
         }
 
        
     } else {
-        echo "<script>alert('Log in to continue. Don’t have an account? Register now! and try again'); window.location.href = 'login.php';</script>";
+        echo "<script>alert('Log in to continue. Don’t have an account? Register now! and try again'); window.location.href = '../index.php';</script>";
     }
 
 
