@@ -1,7 +1,7 @@
 
 <?php include '../includes/header.php';
 $pageTitle = " Feedback Form - Page"; ?>
-<?
+
         
 <fieldset>
     <legend>Contact Information</legend> <!-- Use lowercase for HTML5 compliance -->
