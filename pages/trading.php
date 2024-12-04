@@ -49,7 +49,7 @@ if (!$conn) {
 $search = isset($_GET['search']) ? $_GET['search'] : '';
 
 // Fetch books from the table with optional search filter
-$sql = "SELECT b.id_book, b.bookname, b.file_content, b.file, u.location, u.name, u.email, u.id AS user_id
+$sql = "SELECT b.bookname, b.file_content, b.file, u.location, u.name, u.email, u.id AS user_id
         FROM users u
         INNER JOIN books b ON u.id = b.user_id";
 
@@ -79,12 +79,12 @@ if (mysqli_num_rows($result) > 0) {
         $Location = htmlspecialchars($row['location']);
         $name = htmlspecialchars($row['name']);
         $email = htmlspecialchars($row['email']);
-        $book_id = $row['id_book'];
+       $image_path = "../k/" . $file;
 
         // Generate the HTML for each book
         echo '
         <div class="image_items">
-            <img src="display.php?id=' . htmlspecialchars($book_id) . '" class="images" alt="Book Image" />
+            <img src="' . $image_path . '" class="images" alt="Book Image" />
             <p class="image_details">
                 Book: ' . $bookname . ' <br /><br />
                 Name: ' . $name . ' <br /><br />
