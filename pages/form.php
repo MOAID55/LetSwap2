@@ -4,8 +4,9 @@ $pageTitle = " Feedback Form - Page";
 
 <h1 style="margin-left: 240px;"> Feedback Form </h1>
 
-<img src = "../images/feedback1.png" style = "float: right;" />
-
+<div>
+<img src = "../images/feedback1.png" style = "float: right; margin: 0px auto;" alt = "image feedback"/>
+</div>
 
 <div class="square_f">
     <form id="feedbackForm" action="checkform.php" method="post" onsubmit="return validateForm()">
