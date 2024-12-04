@@ -43,7 +43,7 @@ $stmt = mysqli_prepare($conn, "INSERT INTO books (bookname, file, user_id, file_
 // Bind parameters
 mysqli_stmt_bind_param($stmt, 'ssib', $add, $file_name, $user_id, $file_content);
 
-`
+
 
 
 // Execute the statement
