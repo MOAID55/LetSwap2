@@ -5,7 +5,7 @@ $pageTitle = "Login - Page";
 <div class="content">
     <h2>With one account, you can swap your book <br /> with someone else</h2>
     <form class="square_login" action="checklogin.php" method="post" onsubmit="return login()">
-        <h2>Login</h2>
+        <h2 style = "text-align: center;">Login</h2>
 
         <!-- Username Input -->
         <div>
@@ -28,7 +28,7 @@ $pageTitle = "Login - Page";
         </p>
 
         <!-- Login Button -->
-         <div style="text-align:center">
+        <div style="text-align:center">
         <button type="submit">Login</button>
         </div>
 
