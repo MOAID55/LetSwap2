@@ -43,10 +43,10 @@ if (!$conn) {
 }
 
 // Prepare the SQL statement
-$stmt = mysqli_prepare($conn, "INSERT INTO books (bookname, file, user_id, file_content) VALUES (?, ?, ?, ?)");
+$stmt = mysqli_prepare($conn, "INSERT INTO books (bookname, file, user_id) VALUES (?, ?, ?)");
 
 // Bind parameters
-mysqli_stmt_bind_param($stmt, 'ssib', $add, $file_name, $user_id, $file_content);
+mysqli_stmt_bind_param($stmt, 'ssi', $add, $file_name, $user_id);
 
 
 
