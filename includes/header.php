@@ -7,7 +7,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>LitSwap</title>
-    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
     <link rel="stylesheet" type="text/css" href="/css/print.css" media="print">
     <script src="../css/hover.js" type="text/javascript"></script>
     <script src="../css/validation.js" type="text/javascript"></script>
