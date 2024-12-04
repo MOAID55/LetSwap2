@@ -1,9 +1,6 @@
 <?php include './includes/header.php'; ?>
 
-<?php
-ini_set('upload_max_filesize', getenv('UPLOAD_MAX_FILESIZE'));
-ini_set('post_max_size', getenv('POST_MAX_SIZE'));
-?>
+
 
 
 
