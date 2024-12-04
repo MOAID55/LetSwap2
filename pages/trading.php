@@ -53,7 +53,7 @@ $search = isset($_GET['search']) ? $conn->real_escape_string($_GET['search']) : 
 $sql = "SELECT b.bookname, b.file, u.location, u.name, u.email, u.id AS user_id
         FROM users u
         INNER JOIN books b ON u.id = b.user_id";
-echo $sql;
+
 
 if (!empty($search)) {
     $sql .= " WHERE b.bookname LIKE ?"; // Filter books by title
