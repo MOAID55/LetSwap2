@@ -22,7 +22,7 @@
 
             <div class="tools">
             <p>
-
+                <a href="../index.php"> Home </a> |
                 <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] === true): ?>
                 <a href="../pages/mybook.php">My Book</a> |     
                 <?php endif; ?>
